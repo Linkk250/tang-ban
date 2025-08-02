@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quà sinh nhật 🎁</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe0f0, #e0f7ff);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .gift-box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background: #ff6699;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .lid {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 40px;
+      background: #cc3366;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition: transform 1s ease;
+      z-index: 2;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 0;
+      left: 90px;
+      width: 20px;
+      height: 200px;
+      background: white;
+      z-index: 1;
+    }
+
+    .message {
+      display: none;
+      margin-top: 30px;
+      font-size: 24px;
+      animation: floatUp 2s ease forwards;
+      color: #ff0066;
+    }
+
+    @keyframes floatUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Bấm vào hộp quà để nhận lời chúc bí mật! 🎁</h1>
+  <div class="gift-box" onclick="openGift()">
+    <div class="lid" id="lid"></div>
+    <div class="ribbon"></div>
+  </div>
+  <div class="message" id="message">
+    💌 Chúc mừng sinh nhật cậu, chúc cậu tuổi mới thật hạnh phúc, luôn vui vẻ, may mắn và đạt được mọi điều bạn mong muốn! 💖
+  </div>
+
+  <script>
+    function openGift() {
+      const lid = document.getElementById('lid');
+      const message = document.getElementById('message');
+      lid.style.transform = 'rotate(-45deg) translateY(-80px)';
+      setTimeout(() => {
+        message.style.display = 'block';
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
